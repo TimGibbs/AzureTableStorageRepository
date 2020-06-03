@@ -1,0 +1,35 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'vs2017-win2016'
+
+variables:
+  buildConfiguration: 'Release'
+
+steps:
+# Install the latest version of the dotnet sdk
+- task: UseDotNet@2
+  displayName: 'Installing .NET Core SDK...'
+  inputs:
+    version: 3.1.x
+    includePreviewVersions: true
+
+#Build projects
+- task: DotNetCoreCLI@2
+  displayName: 'dotnet publish'
+  inputs:
+    command: publish
+    publishWebProjects: false
+    projects: '**/*.csproj'
+    arguments: '--configuration $(buildConfiguration)'
+    zipAfterPublish: false
+    modifyOutputPath: true
+
+- task: DotNetCoreCLI@2
+  displayName: 'dotnet pack'
+  inputs:
+    command: pack
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publishing Build Artifacts...'
