@@ -4,6 +4,14 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>AzureTableStorageRepository</AssemblyName>
     <RootNamespace>AzureTableStorageRepository</RootNamespace>
+    <PackageId>AzureTableStorageRepository</PackageId>
+    <Version>1.0.1</Version>
+    <Authors>Tim Gibbs</Authors>
+    <RepositoryType>git</RepositoryType>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Description>Generic repository for Azure Table Storage</Description>
+    <PackageProjectUrl>https://github.com/TimGibbs/AzureTableStorageRepository</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/TimGibbs/AzureTableStorageRepository</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
